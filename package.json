@@ -17,5 +17,8 @@
   "author": "Will S. Laurance",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "gitHead": "474e2a288906ebff5080b5c10b42c047a7e3b862"
+  "gitHead": "474e2a288906ebff5080b5c10b42c047a7e3b862",
+  "devDependencies": {
+    "mocha": "~1.8.1"
+  }
 }
