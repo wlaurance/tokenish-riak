@@ -1,0 +1,21 @@
+{
+  "name": "tokenish-riak",
+  "version": "0.0.0",
+  "description": "riak specific tokenish implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wlaurance/tokenish-riak.git"
+  },
+  "keywords": [
+    "tokenish",
+    "riak"
+  ],
+  "author": "Will S. Laurance",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "474e2a288906ebff5080b5c10b42c047a7e3b862"
+}
