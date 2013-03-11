@@ -1,4 +1,5 @@
-var riak = require('riak-js');
+var riak = require('riak-js'),
+ _ = require('underscore');
 module.exports = function(config){
   if(!config){
     config = {
@@ -26,6 +27,16 @@ module.exports = function(config){
         tokens.push(token);
         client.save(config.bucket, id, tokens, function(err){
           callback(err, token);
+        });
+      });
+    },
+    delete:function(id, token, callback){
+      client.get(config.bucket, id, function(err, tokens, meta){
+        if (typeof tokens.length === 'undefined'){
+          return callback(new Error('tokens not defined'));
+        }
+        client.save(config.bucket, id, _.without(tokens, token), function(err){
+          callback(err);
         });
       });
     }

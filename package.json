@@ -22,6 +22,7 @@
     "mocha": "~1.8.1"
   },
   "dependencies": {
-    "riak-js": "~0.9.4pre3"
+    "riak-js": "~0.9.4pre3",
+    "underscore": "~1.4.4"
   }
 }
