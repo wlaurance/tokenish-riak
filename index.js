@@ -39,6 +39,11 @@ module.exports = function(config){
           callback(err);
         });
       });
+    },
+    deleteAll:function(id, callback){
+      client.save(config.bucket, id, [], function(err){
+        callback(err);
+      });
     }
   };
 };

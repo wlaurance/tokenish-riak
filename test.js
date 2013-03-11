@@ -14,6 +14,9 @@ describe('tokenish riak', function(){
   it('should have a delete function', function(){
     assert.equal(typeof(tr.delete), 'function');
   });
+  it('should have a deleteAll function', function(){
+    assert.equal(typeof(tr.deleteAll), 'function');
+  });
   it('should add a token to the list based on a key', function(done){
     token = new Date().toJSON();
     tr.add('id', token, function(err){
@@ -33,6 +36,21 @@ describe('tokenish riak', function(){
       tr.get('id', function(err, tokens){
         assert.equal(_.indexOf(tokens, token), -1);
         done();
+      });
+    });
+  });
+  it('should delete all tokens', function(done){
+    tr.add('id', token, function(err){
+      tr.add('id', token, function(err){
+        tr.get('id', function(err, tokens){
+          assert.equal(tokens.length > 1, true);
+          tr.deleteAll('id', function(err){
+            tr.get('id', function(err, tokens){
+              assert.equal(tokens.length, 0);
+              done();
+            });
+          });
+        });
       });
     });
   });
